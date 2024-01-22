@@ -1,0 +1,7 @@
+Connect to EKS through AWS CLI 
+    1.  Install aws-iam-authenticator, it will help authenticating to EKS cluster, here's how to install it
+    2.  Make sure you have AWS CLI version 1.16.308 or greater as it uses internally eks's get-token command.
+    3.  Modify your kubectl configuration file to use for authentication. To create your kubeconfig file by AWS CLI, run the following command that will auto-generate kubeconfig and 
+        store or merge generated config under ~/.kube/config. For More information, please check official documentation here
+            aws eks --region region update-kubeconfig --name cluster_name
+    4. To test, run kubectl get svc
